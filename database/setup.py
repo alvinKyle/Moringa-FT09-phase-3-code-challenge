@@ -5,6 +5,15 @@ def create_tables():
     cursor = conn.cursor()
     
     cursor.execute('''
+            DROP TABLE IF EXISTS articles
+        ''')
+    cursor.execute('''
+            DROP TABLE IF EXISTS authors
+        ''')
+    cursor.execute('''
+            DROP TABLE IF EXISTS magazines
+        ''')
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS authors (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL
